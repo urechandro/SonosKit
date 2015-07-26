@@ -52,7 +52,7 @@ typedef void (^kFindControllersBlock)(NSArray *ipAddresses);
                 NSDictionary *players = [supportInfo valueForKeyPath:@"ZonePlayers"];
                 NSDictionary *player = [players valueForKeyPath:@"ZonePlayer"];
                 
-                if([players count] > 1) {
+                //if([players count] > 1) {
                     // Do stuff with multiple players
                     for (NSDictionary *dictionary in inputs){
                         NSString *name = dictionary[@"text"];
@@ -65,8 +65,8 @@ typedef void (^kFindControllersBlock)(NSArray *ipAddresses);
                         
                         [controllers addObject:@{@"ip": [location objectAtIndex:0], @"port" : [location objectAtIndex:1], @"name": name, @"coordinator": [NSNumber numberWithBool:[coordinator isEqualToString:@"true"] ? YES : NO], @"uuid": uuid, @"group": group, @"controller": controllerObject}];
                     }
-                }
-                else {
+                //}
+                /*else {
                     NSString *name = player[@"text"];
                     NSString *coordinator = player[@"coordinator"];
                     NSString *uuid = player[@"uuid"];
@@ -76,7 +76,7 @@ typedef void (^kFindControllersBlock)(NSArray *ipAddresses);
                     SonosController *controllerObject = [[SonosController alloc] initWithIP:[location objectAtIndex:0]];
                     
                     [controllers addObject:@{@"ip": [location objectAtIndex:0], @"port" : [location objectAtIndex:1], @"name": name, @"coordinator": [NSNumber numberWithBool:[coordinator isEqualToString:@"true"] ? YES : NO], @"uuid": uuid, @"group": group, @"controller": controllerObject}];
-                }
+                }*/
                 /*
                  for (NSDictionary *input in inputs) {
                  NSString *ipLocation = input[@"location"];
